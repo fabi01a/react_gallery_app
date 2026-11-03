@@ -10,9 +10,7 @@ function App() {
       <h1>Image Gallery</h1>
       <Nav />
       <Routes>
-        <Route path="dogs" element={<Gallery />} />
-        <Route path="cats" element={<Gallery />} />
-        <Route path="birds" element={<Gallery />} />
+        <Route path="/:category" element={<Gallery />} />
       </Routes>
     </div>
   );
