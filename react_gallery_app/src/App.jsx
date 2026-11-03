@@ -13,6 +13,7 @@ function App() {
       <Nav />
       <Routes>
         <Route path="/:category" element={<Gallery />} />
+        <Route path="/search/:query" element={<Gallery />} />
       </Routes>
     </div>
   );
