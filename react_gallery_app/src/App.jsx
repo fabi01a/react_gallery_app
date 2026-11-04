@@ -1,5 +1,5 @@
 import './App.css'
-import { Route, Routes, Navigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Gallery from './components/Gallery';
 import Nav from './components/Nav';
 import Search from './components/Search';

@@ -8,6 +8,11 @@ const Search = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+        if (!input.trim()) {
+            return;
+        }
+        
         navigate(`/search/${input}`);
     };
     
