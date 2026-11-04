@@ -42,16 +42,26 @@ const Gallery = () => {
         }
     }, [searchTerm, apiKey]);
     
+    const title = searchTerm === "dogs" ? "Dog"
+                : searchTerm === "cats" ? "Cat"
+                : searchTerm === "birds" ? "Bird" 
+                : searchTerm.charAt(0).toUpperCase() + searchTerm.slice(1);
+
     return (
         <div>   
-            <h2>{searchTerm} Images</h2>
+            <h2>{title} Gifs</h2>
             
             {loading //are we loading?
                 ? "Loading images..." //<- show
                 : error //did something go wrong?
                     ? error// display error message
                     :images.length === 0 //did the search return 0 images
-                        ? "No results found"//<-show
+                        ? (
+                            <div className="no-results">
+                                <h3>No results found</h3>
+                                <p>That search did not return any results, please try again.</p>
+                            </div>
+                        )
                         :(
                             <div className='gallery'>
                                 {images.map(image => ( //otherwise display images

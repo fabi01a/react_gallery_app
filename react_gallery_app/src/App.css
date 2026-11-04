@@ -69,6 +69,7 @@ form {
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
+  margin-top: 80px;
 }
 
 form input {
@@ -84,7 +85,7 @@ form input {
 
 form button {
   height: 40px;
-  padding: 0 15px;
+  padding:  15px;
   background-color: #438fc2;
   color: white;
   border: none;
@@ -94,4 +95,20 @@ form button {
 
 form button:hover {
   background-color: #244f6d;
+}
+
+/* No results */
+.no-results {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.no-results h3 {
+  margin-bottom: 5px;
+  color: #444;
+}
+
+.no-results p {
+  color: #0d0d0d;
+  font-size: 18px;
 }

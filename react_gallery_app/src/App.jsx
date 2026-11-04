@@ -8,7 +8,6 @@ import Search from './components/Search';
 function App() {
   return (
     <div className='container' >
-      <h1>Image Gallery</h1>
       <Search />
       <Nav />
       <Routes>
