@@ -10,7 +10,7 @@ const Gallery = () => {
     const [images, setImages] = useState([]);
     const [loading, setLoading] = useState(false);
     
-    console.log('Loading state',loading);
+    
     const apiKey = import.meta.env.VITE_PIXABAY_API_KEY;
     
     useEffect(() => {
@@ -31,8 +31,12 @@ const Gallery = () => {
     return (
         <div>   
             <h2>{searchTerm} Images</h2>
-            {loading ? "Loading images..." :images.map(image => (
-                <img key={image.id} src={image.webformatURL} alt={image.tags} />
+            {loading 
+            ? "Loading images..." 
+            :images.length === 0
+                ? "No results found"
+                :images.map(image => (
+                    <img key={image.id} src={image.webformatURL} alt={image.tags} />
             ))}
         </div> 
     );
