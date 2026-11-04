@@ -12,7 +12,7 @@ const Search = () => {
         if (!input.trim()) {
             return;
         }
-        
+
         navigate(`/search/${input}`);
     };
     
@@ -21,13 +21,13 @@ const Search = () => {
         <form onSubmit={handleSubmit} > {/*where the user submits the form */}
             <input 
                 type='text' 
-                placeholder="Search images..."
+                placeholder="Search"
                 value={input}
                 //where the user types 
                 onChange={(e) => setInput(e.target.value)} 
                 
             />
-            <button type='submit'>Search</button>
+            <button type='submit'> 🔍</button>
         </form>
         
     );

@@ -45,17 +45,24 @@ const Gallery = () => {
     return (
         <div>   
             <h2>{searchTerm} Images</h2>
+            
             {loading //are we loading?
-            ? "Loading images..." //<- show
-            : error //did something go wrong?
-                ? error// display error message
-                :images.length === 0 //did the search return 0 images
-                    ? "No results found"//<-show
-                    :images.map(image => ( //otherwise display images
-                        <img key={image.id} src={image.webformatURL} alt={image.tags} />
-            ))}
-        </div> 
+                ? "Loading images..." //<- show
+                : error //did something go wrong?
+                    ? error// display error message
+                    :images.length === 0 //did the search return 0 images
+                        ? "No results found"//<-show
+                        :(
+                            <div className='gallery'>
+                                {images.map(image => ( //otherwise display images
+                                    <img key={image.id} src={image.webformatURL} alt={image.tags} 
+                                    />
+                                ))}
+                            </div> 
+                        )
+        }
+    </div>
     );
-}
+};
 
 export default Gallery;
