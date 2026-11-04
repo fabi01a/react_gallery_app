@@ -1,9 +1,10 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState , useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const Search = () => {
     const [input,setInput] = useState("");
 
+    const location = useLocation();
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
@@ -16,6 +17,10 @@ const Search = () => {
         navigate(`/search/${input}`);
     };
     
+    useEffect(() => {
+        setInput("");
+    }, [location.pathname]);
+
     return (
         
         <form onSubmit={handleSubmit} > {/*where the user submits the form */}
