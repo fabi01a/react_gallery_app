@@ -2,12 +2,12 @@ import {useState, useEffect } from 'react';
 import { useParams} from 'react-router-dom';
 import PhotoList from './PhotoList';
 
-const Gallery = () => {
+const Gallery = ({ category }) => {
     const [images, setImages] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
-    const { category, query } = useParams();
+    const { query } = useParams();
     const searchTerm = category || query;
     
     const apiKey = import.meta.env.VITE_PIXABAY_API_KEY;

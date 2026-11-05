@@ -14,7 +14,9 @@ function App() {
       <Nav />
       <Routes>
         <Route path="/" element={<div />} />
-        <Route path="/:category" element={<Gallery />} />
+        <Route path="/dogs" element={<Gallery category="dogs" />} />
+        <Route path="/cats" element={<Gallery category="cats" />} />
+        <Route path="/birds" element={<Gallery category="birds"/>} />
         <Route path="/search/:query" element={<Gallery />} />
         <Route path="*" element={<h2>404-Page Not Found</h2>} />
       </Routes>
