@@ -26,18 +26,29 @@ A responsive photo gallery application built with React, Vite, and React Router.
 
 ```bash
 git clone YOUR_REPOSITORY_URL
+```
+### Navigate into the cloned repository
+
+```bash
+cd react_gallery_app
+```
+### 2. Navigate into the React application
+
+```bash
 cd react_gallery_app
 ```
 
-### 2. Install dependencies
+### 3. Install dependencies
 
 ```bash
-npm install
+npm ci
 ```
 
-### 3. Configure the Pixabay API key
+### 4. Configure the Pixabay API key
 
-Create a `.env` file in the root directory of the project.
+obtain an API key from Pixabay: *You can obtain an API key from [Pixabay](https://pixabay.com/api/docs/)*
+
+inside the `react_gallery_app directory`, create a file named `.env`
 
 Add the following:
 
@@ -47,13 +58,13 @@ VITE_PIXABAY_API_KEY=your_pixabay_api_key
 
 Replace `your_pixabay_api_key` with your own Pixabay API key.
 
-You can obtain an API key from [Pixabay](https://pixabay.com/api/docs/).
 
-The `.env` file is excluded from version control using `.gitignore`.
+The `.env` file is excluded from version control using `.gitignore`. so it is not included in the cloned repository.
 
-**Note:** Vite exposes variables prefixed with `VITE_` to client-side code. The Pixabay API key is therefore not a secret once the application runs in the browser.
 
-### 4. Start the development server
+### 5. Start the development server
+
+make sure your terminal is still inside `react_gallery_app`
 
 ```bash
 npm run dev
@@ -65,6 +76,18 @@ Open the local URL displayed in your terminal, typically:
 http://localhost:5173/
 ```
 
+
+### Available Scripts
+
+Run these commands from the react_gallery_app directory:
+
+• npm run dev  ->  Starts the Vite development server
+
+• npm run build  ->  Creates a production build
+
+• npm run preview  ->  Previews the production build
+
+• npm run lint  ->  Runs ESLint to check for code issues
 
 
 ## How It Works
