@@ -1,5 +1,6 @@
 import {useState, useEffect } from 'react';
 import { useParams} from 'react-router-dom';
+import PhotoList from './PhotoList';
 
 const Gallery = () => {
     const [images, setImages] = useState([]);
@@ -58,14 +59,8 @@ const Gallery = () => {
                                 <p>That search did not return any results, please try again.</p>
                             </div>
                         )
-                        :(
-                            <div className='gallery'>
-                                {images.map(image => (
-                                    <img key={image.id} src={image.webformatURL} alt={image.tags} 
-                                    />
-                                ))}
-                            </div> 
-                        )
+                        :
+                        <PhotoList images={images} />
         }
     </div>
     );
