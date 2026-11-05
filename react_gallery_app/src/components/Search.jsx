@@ -1,26 +1,22 @@
-import { useState , useEffect } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Search = () => {
+    //managing the input state
     const [input,setInput] = useState("");
 
-    const location = useLocation();
-    const navigate = useNavigate();
+    const navigate = useNavigate(); //allows us to change the url thru JS
 
     const handleSubmit = (e) => {
-        e.preventDefault();
+        e.preventDefault(); //prevents full page reloads between pages
 
-        if (!input.trim()) {
-            return;
+        if (!input.trim()) { //stop early if invalid input: if true return immediately exits handleSubmit
+            return; // (prevents nav code from running)
         }
 
-        navigate(`/search/${input}`);
+        navigate(`/search/${input}`);//change the url
     };
     
-    useEffect(() => {
-        setInput("");
-    }, [location.pathname]);
-
     return (
         
         <form onSubmit={handleSubmit} > {/*where the user submits the form */}
@@ -29,8 +25,7 @@ const Search = () => {
                 placeholder="Search"
                 value={input}
                 //where the user types 
-                onChange={(e) => setInput(e.target.value)} 
-                
+                onChange={(e) => setInput(e.target.value)}  //reads the current text from input element
             />
             <button type='submit'> 🔍</button>
         </form>

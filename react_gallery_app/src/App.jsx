@@ -1,14 +1,16 @@
 import './App.css'
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import Gallery from './components/Gallery';
 import Nav from './components/Nav';
 import Search from './components/Search';
 
 
 function App() {
+  const location = useLocation();
+
   return (
     <div className='container' >
-      <Search />
+      <Search key={location.pathname}/>
       <Nav />
       <Routes>
         <Route path="/" element={<div />} />
